@@ -78,7 +78,7 @@ export class AppComponent implements AfterViewInit {
   playersCount: number = 0;
   columns: number = 8;
   whoOutedThePlayer: string = "";
-
+  showRules: boolean = true;
   gridOfGame: BoxInfo[][] = Array.from({ length: this.rows }, (_, rowIndex) =>
     Array.from({ length: this.columns }, (_, columnIndex) => ({
       rowIndex,
@@ -312,7 +312,14 @@ export class AppComponent implements AfterViewInit {
   }
 
   showWinModal() {
-    new bootstrap.Modal(document.getElementById('winnerModal')!).show();
+    const modalElement = document.getElementById('winnerModal')!;
+
+  const modal = new bootstrap.Modal(modalElement, {
+    backdrop: 'static',  
+    keyboard: false 
+  });
+
+  modal.show();
   }
 
   ballCounts(count: number): number[] {
@@ -387,4 +394,7 @@ export class AppComponent implements AfterViewInit {
     const audio = new Audio('ball-pop.mp4');
     audio.pause();
   }
+  closeRules() {
+  this.showRules = false;
+}
 }

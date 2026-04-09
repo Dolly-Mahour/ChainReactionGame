@@ -7,6 +7,7 @@
       </div>
     </div>
   </div>
+
   <div class="modal d-block" *ngIf="!gameStarted" id="startGame" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content p-4">
@@ -15,7 +16,6 @@
           <div class="d-flex flex-column g-3 row">
             <button class="btn bg-lightBlue text-white fw-semibold" (click)="createRoom()">Create room</button>
 
-            <input type="text" class="inputBox" placeholder="Enter Name" required [(ngModel)]="playerName">
 
             <input type="text" class="inputBox" placeholder="Enter Code" [(ngModel)]="joinCode">
 
@@ -41,6 +41,49 @@
       </div>
     </div>
   </div>
+  <div class="modal d-block top-modal" *ngIf="!gameStarted && showRules" id="startGame">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+
+        <div class="modal-body p-1">
+          <h1 class="mb-4">Game Rules</h1>
+          <ul>
+            <li>
+              <p>2 player game, host creates room and does not enter code, second player joins using code</p>
+              <p>2 खिलाड़ियों का खेल, host room बनाता है और code नहीं डालता, दूसरा खिलाड़ी code डालकर जुड़ता है</p>
+            </li>
+            <li>
+              <p>Game starts automatically when both players join</p>
+              <p>दोनों खिलाड़ियों के जुड़ते ही game अपने आप शुरू हो जाता है</p>
+            </li>
+            <li>
+              <p>Players take turns to add balls in the grid</p>
+              <p>खिलाड़ी बारी-बारी से grid में balls डालते हैं</p>
+            </li>
+            <li>
+              <p>Corner splits at 2 balls, border at 3 balls, and center at 4 balls</p>
+              <p>कोना 2 balls पर, किनारा 3 balls पर, और बीच 4 balls पर फटता है</p>
+            </li>
+            <li>
+              <p>Explosion spreads balls to nearby cells and captures opponent cells</p>
+              <p>फटने पर balls आसपास के cells में फैलती हैं और opponent के cells अपने हो जाते हैं</p>
+            </li>
+            <li>
+              <p>Player with no balls loses, and the one who eliminates opponent wins</p>
+              <p>जिसके पास balls नहीं बचती वो हारता है, और opponent को खत्म करने वाला जीतता है</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="text-center mt-3">
+          <button class="btn btn-success px-4" (click)="closeRules()">
+            I Understand
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
   <div class="modal" id="gameModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -61,7 +104,8 @@
     </div>
   </div>
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div #codeErrorToast id="codeErrorToast" class="toast bg-danger text-white fw-semibold" data-bs-delay="3000" role="alert" aria-live="assertive" aria-atomic="true">
+    <div #codeErrorToast id="codeErrorToast" class="toast bg-danger text-white fw-semibold" data-bs-delay="3000"
+      role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header d-flex align-items-center justify-content-end pe-3 p-0">
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
@@ -71,7 +115,8 @@
     </div>
   </div>
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div #clipboardToast id="clipboardToast" class="toast bg-success text-white fw-semibold" mdata-bs-delay="3000" role="alert" aria-live="assertive" aria-atomic="true">
+    <div #clipboardToast id="clipboardToast" class="toast bg-success text-white fw-semibold" mdata-bs-delay="3000"
+      role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header d-flex align-items-center justify-content-end pe-3 p-0">
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
@@ -81,12 +126,13 @@
     </div>
   </div>
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div #connectedToast id="connectedToast" class="toast bg-success text-white fw-semibold" data-bs-delay="3000" role="alert" aria-live="assertive" aria-atomic="true">
+    <div #connectedToast id="connectedToast" class="toast bg-success text-white fw-semibold" data-bs-delay="3000"
+      role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header d-flex align-items-center justify-content-end pe-3 p-0">
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body fs-5">
-        Connection to game is Successfull 
+        Connection to game is Successfull
       </div>
     </div>
   </div>
