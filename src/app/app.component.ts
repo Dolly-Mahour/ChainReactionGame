@@ -192,38 +192,38 @@ export class AppComponent implements AfterViewInit {
   async cornerExplodeLogic(rowIndex: number, colIndex: number) {
 
     if (rowIndex == 0 && colIndex == 0) {
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
       await this.boxClicked(rowIndex, colIndex + 1, true);
 
-      await this.delay(280);
+      await this.delay(120);
       await this.boxClicked(rowIndex + 1, colIndex, true);
     }
 
     else if (rowIndex == 0 && colIndex == 7) {
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
       await this.boxClicked(rowIndex + 1, colIndex, true);
 
-      await this.delay(280);
+      await this.delay(120);
       await this.boxClicked(rowIndex, colIndex - 1, true);
     }
 
     else if (rowIndex == 17 && colIndex == 0) {
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
       await this.boxClicked(rowIndex - 1, colIndex, true);
 
-      await this.delay(280);
+      await this.delay(120);
       await this.boxClicked(rowIndex, colIndex + 1, true);
     }
 
     else if (rowIndex == 17 && colIndex == 7) {
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
       await this.boxClicked(rowIndex, colIndex - 1, true);
 
-      await this.delay(280);
+      await this.delay(120);
       await this.boxClicked(rowIndex - 1, colIndex, true);
     }
   }
@@ -231,75 +231,75 @@ export class AppComponent implements AfterViewInit {
   async borderExplodeLogic(rowIndex: number, colIndex: number) {
 
     if (colIndex == 0) {
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
       await this.boxClicked(rowIndex + 1, colIndex, true);
 
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
       await this.boxClicked(rowIndex - 1, colIndex, true);
 
-      await this.delay(280);
+      await this.delay(120);
       await this.boxClicked(rowIndex, colIndex + 1, true);
     }
 
     else if (colIndex == 7) {
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
       await this.boxClicked(rowIndex + 1, colIndex, true);
 
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
       await this.boxClicked(rowIndex - 1, colIndex, true);
 
-      await this.delay(280);
+      await this.delay(120);
       await this.boxClicked(rowIndex, colIndex - 1, true);
     }
 
     else if (rowIndex == 0) {
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
       await this.boxClicked(rowIndex + 1, colIndex, true);
 
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
       await this.boxClicked(rowIndex, colIndex - 1, true);
 
-      await this.delay(280);
+      await this.delay(120);
       await this.boxClicked(rowIndex, colIndex + 1, true);
     }
 
     else if (rowIndex == 17) {
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
 
       await this.boxClicked(rowIndex - 1, colIndex, true);
 
-      await this.delay(280);
+      await this.delay(120);
       this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
 
       await this.boxClicked(rowIndex, colIndex - 1, true);
 
-      await this.delay(280);
+      await this.delay(120);
       await this.boxClicked(rowIndex, colIndex + 1, true);
     }
   }
 
   async centerExplodeLogic(rowIndex: number, colIndex: number) {
 
-    await this.delay(280);
+    await this.delay(120);
     this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
     await this.boxClicked(rowIndex + 1, colIndex, true);
 
-    await this.delay(280);
+    await this.delay(120);
     this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
     await this.boxClicked(rowIndex - 1, colIndex, true);
 
-    await this.delay(280);
+    await this.delay(120);
     this.gridOfGame[rowIndex][colIndex].numberOfBalls--;
     await this.boxClicked(rowIndex, colIndex + 1, true);
 
-    await this.delay(280);
+    await this.delay(120);
     await this.boxClicked(rowIndex, colIndex - 1, true);
   }
 
