@@ -13,8 +13,18 @@ export class WebsocketService {
     if (this.socket) {
       this.socket.close();
     }
-    this.socket = new WebSocket(`ws://127.0.0.1:8000/ws/game/${roomId}/`);
+    this.socket = new WebSocket(`wss://chain-reaction-backend-f39z.onrender.com/ws/game/${roomId}/`);
+    // this.socket.onopen = () => {
+    //   console.log("Connected ✅");
+    // };
 
+    this.socket.onerror = (err) => {
+      console.log("Error ❌", err);
+    };
+
+    this.socket.onclose = () => {
+      console.log("Closed ⚠️");
+    };
     this.socket.onopen = () => {
 
       console.log("Connected to WebSocket");
