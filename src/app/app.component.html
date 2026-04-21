@@ -1,4 +1,4 @@
-<div class="container-fluid g-0 bgGradient">
+<div class="container-fluid g-0 bgGradient gameBoard">
   <div *ngFor="let row of gridOfGame; let rowIndex  = index" class="row g-0  rowSize">
     <div *ngFor="let box of row; let colIndex = index" (click)="boxClicked(rowIndex,colIndex)"
       class="col g-0 border-1 border p-2 d-flex justify-content-center align-items-center flex-wrap">

@@ -108,3 +108,58 @@
 .left {
   animation-name: moveLeft;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .gameBoard{
+    height: 100% !important;
+    width: 100% !important;
+  }
+  /* .modal-dialog{
+    width: 90% !important;
+  } */
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .gameBoard{
+    height: 100% !important;
+    width: 400px !important;
+  }
+  .modal-dialog{
+    width: 350px !important;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .gameBoard{
+    height: 100% !important;
+    width: 400px !important;
+  }
+  .modal-dialog{
+    width: 350px !important;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .gameBoard{
+    height: 100% !important;
+    width: 400px !important;
+  }
+  .modal-dialog{
+    width: 350px !important;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .gameBoard{
+    height: 100% !important;
+    width: 400px !important;
+  }
+  .modal-dialog{
+    width: 350px !important;
+  }
+}
